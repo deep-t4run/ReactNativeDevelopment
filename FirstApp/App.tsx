@@ -6,6 +6,10 @@ export default function App() {
       <View style={styles.view1}>
         <Text style={styles.text}>Hello Parth</Text>
       </View>
+
+      <View style={styles.view2}>
+        <View style={styles.view3}></View>
+      </View>
     </SafeAreaView>
   );
 }
@@ -25,6 +29,22 @@ const styles = StyleSheet.create({
     backgroundColor: "blue",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 20,
+  },
+
+  view2: {
+    height: 200,
+    width: 200,
+    backgroundColor: "red",
+    padding: 20,
+    // justifyContent: "center",
+    // alignItems: "center",
+  },
+
+  view3: {
+    height: 30,
+    width: 30,
+    backgroundColor: "black",
   },
 
   text: {
