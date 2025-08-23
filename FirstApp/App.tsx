@@ -1,19 +1,11 @@
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  Platform,
-  ActivityIndicator,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Platform, View, Text } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>
-        <ActivityIndicator />
-        <ActivityIndicator size={"large"} color={"blue"} />
-        This is {Platform.OS === "android" ? "Android" : "IOS"} device
-      </Text>
+      <View style={styles.view1}>
+        <Text style={styles.text}>Hello Parth</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -25,5 +17,19 @@ const styles = StyleSheet.create({
     marginTop: 50,
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  view1: {
+    height: 200,
+    width: 200,
+    backgroundColor: "blue",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  text: {
+    color: "white",
+    fontSize: 25,
+    fontWeight: "bold",
   },
 });
