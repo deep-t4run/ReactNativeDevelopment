@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Button, View, Text, Modal } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
 
 export default function App() {
   const [modalState, setModalState] = useState(false);
@@ -18,6 +20,7 @@ export default function App() {
       <Modal animationType="slide" visible={modalState}>
         <Text style={{ fontSize: 50, marginTop: 50 }}>Modal is Opened</Text>
         <Button title="Hide Modal" onPress={() => setModalState(false)} />
+        <AntDesign name="closecircleo" size={40} color="red" onPress={() => setModalState(false)} />
       </Modal>
     </View>
   );
