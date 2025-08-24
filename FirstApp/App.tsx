@@ -1,30 +1,24 @@
 import { useState } from "react";
-import { Button, View, Text } from "react-native";
+import { Button, View, Text, Modal } from "react-native";
 
 export default function App() {
-  const [state, setState] = useState(0);
-
-  const increaseValue = () => {
-    setState(state + 1);
-  };
-
-  const decreaseValue = () => setState(state - 1);
-
-  const resetValue = () => setState(0);
+  const [modalState, setModalState] = useState(false);
 
   return (
     <View
       style={{
-        backgroundColor: "#white",
+        backgroundColor: "#ff5722",
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Button title="Increase" onPress={increaseValue} />
-      <Text style={{ fontSize: 50 }}>{state}</Text>
-      <Button title="Decrease" onPress={decreaseValue} />
-      <Button title="Reset" onPress={resetValue} />
+      <Button title="Show Modal" onPress={() => setModalState(true)} />
+
+      <Modal animationType="slide" visible={modalState}>
+        <Text style={{ fontSize: 50, marginTop: 50 }}>Modal is Opened</Text>
+        <Button title="Hide Modal" onPress={() => setModalState(false)} />
+      </Modal>
     </View>
   );
 }
