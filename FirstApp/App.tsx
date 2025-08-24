@@ -1,9 +1,12 @@
-import { View, ImageBackground, Text } from "react-native";
+import { useState } from "react";
+import { SafeAreaView, TextInput, Text } from "react-native";
 
 export default function App() {
+
+  const [text, setText] = useState("");
+
   return (
-    <ImageBackground
-      source={require("./assets/goku back.jpg")}
+    <SafeAreaView
       style={{
         backgroundColor: "#ff5722",
         flex: 1,
@@ -11,19 +14,26 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <View
+      <TextInput
+        placeholder="Enter your name"
+        keyboardType="numeric"
+        secureTextEntry={true}
+        multiline={true}
+        editable={true}
+        autoFocus={true}
+        value={text}
+        onChangeText = {setText}
         style={{
-          backgroundColor: "#fff",
-          width: 100,
-          height: 100,
-          borderRadius: 50,
-          justifyContent: "center",
-          alignItems: "center",
+          height: 40,
+          width: "80%",
+          borderRadius: 5,
+          borderWidth: 1,
+          borderColor: "black",
+          backgroundColor: "white",
         }}
-      >
-        <Text> Hello World! </Text>
+      />
 
-      </View>
-    </ImageBackground>
+      <Text>My name is: {text}</Text>
+    </SafeAreaView>
   );
 }
