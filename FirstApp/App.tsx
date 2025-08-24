@@ -1,11 +1,7 @@
-import { View, Dimensions } from "react-native";
+import { View } from "react-native";
+import { scale, verticalScale, s, vs } from "react-native-size-matters";
 
 export default function App() {
-  console.log(Dimensions.get("screen"));
-
-  const PHONE_WIDTH = Dimensions.get("screen").width;
-  const PHONE_HEIGHT = Dimensions.get("screen").height;
-
   return (
     <View
       style={{
@@ -16,8 +12,8 @@ export default function App() {
       <View
         style={{
           backgroundColor: "red",
-          width: PHONE_WIDTH,
-          height: PHONE_HEIGHT/2,
+          width: s(300),
+          height: vs(600),
         }}
       ></View>
     </View>
