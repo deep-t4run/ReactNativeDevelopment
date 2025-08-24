@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { SafeAreaView, TextInput, Text } from "react-native";
+import { SafeAreaView } from "react-native";
+
+import AppLogoImage from "./src/components/AppLogoImage";
+import WelcomeText from "./src/components/WelcomText";
 
 export default function App() {
-
-  const [text, setText] = useState("");
 
   return (
     <SafeAreaView
@@ -14,26 +14,8 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <TextInput
-        placeholder="Enter your name"
-        keyboardType="numeric"
-        secureTextEntry={true}
-        multiline={true}
-        editable={true}
-        autoFocus={true}
-        value={text}
-        onChangeText = {setText}
-        style={{
-          height: 40,
-          width: "80%",
-          borderRadius: 5,
-          borderWidth: 1,
-          borderColor: "black",
-          backgroundColor: "white",
-        }}
-      />
-
-      <Text>My name is: {text}</Text>
+      <AppLogoImage />
+      <WelcomeText />
     </SafeAreaView>
   );
 }
