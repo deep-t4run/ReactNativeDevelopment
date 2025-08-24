@@ -1,13 +1,9 @@
-import { useState } from "react";
-import { Button, View, Text, Modal } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-
+import { View, ImageBackground, Text } from "react-native";
 
 export default function App() {
-  const [modalState, setModalState] = useState(false);
-
   return (
-    <View
+    <ImageBackground
+      source={require("./assets/goku back.jpg")}
       style={{
         backgroundColor: "#ff5722",
         flex: 1,
@@ -15,13 +11,19 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Button title="Show Modal" onPress={() => setModalState(true)} />
+      <View
+        style={{
+          backgroundColor: "#fff",
+          width: 100,
+          height: 100,
+          borderRadius: 50,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text> Hello World! </Text>
 
-      <Modal animationType="slide" visible={modalState}>
-        <Text style={{ fontSize: 50, marginTop: 50 }}>Modal is Opened</Text>
-        <Button title="Hide Modal" onPress={() => setModalState(false)} />
-        <AntDesign name="closecircleo" size={40} color="red" onPress={() => setModalState(false)} />
-      </Modal>
-    </View>
+      </View>
+    </ImageBackground>
   );
 }
