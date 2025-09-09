@@ -1,7 +1,13 @@
-import { View, Text, StyleSheet, ImageBackground, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import React from "react";
 import { s, vs } from "react-native-size-matters";
-import VideoIcon from "../assests/Icons";
+import { VideoIcon } from "../assests/Icons";
 
 const phoneWidth = Dimensions.get("window").width;
 const cardWidth = (phoneWidth - s(16) * 3) / 2;
@@ -12,7 +18,11 @@ type MeditationCardProps = {
   date: string;
 };
 
-export default function MeditationCard({imageUrl, title, date}: MeditationCardProps) {
+export default function MeditationCard({
+  imageUrl,
+  title,
+  date,
+}: MeditationCardProps) {
   return (
     <View>
       <ImageBackground
@@ -23,15 +33,17 @@ export default function MeditationCard({imageUrl, title, date}: MeditationCardPr
         }}
       >
         <View style={styles.overlay} />
-        <View style={styles.liveBadge} >
-            <Text style={styles.liveText}>Live</Text>
+        <View style={styles.liveBadge}>
+          <Text style={styles.liveText}>Live</Text>
         </View>
         <View style={styles.cardContent}>
           <Text style={styles.title}>{title}</Text>
-          <View style={{
-            flexDirection: "row",
-            alignItems: "center",
-          }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
             <VideoIcon />
             <Text style={styles.dateText}>{date}</Text>
           </View>
@@ -92,8 +104,8 @@ const styles = StyleSheet.create({
   },
 
   liveText: {
-    fontSize:s(11),
+    fontSize: s(11),
     fontWeight: "semibold",
     color: "#fff",
-  }
+  },
 });

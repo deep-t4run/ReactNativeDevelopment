@@ -1,21 +1,15 @@
 import { SafeAreaView } from "react-native";
-
-import AppLogoImage from "./src/components/AppLogoImage";
-import WelcomeText from "./src/components/WelcomText";
+import MainStackNavigator from "./src/navigation/MainStackNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import MyTabs from "./src/navigation/BottomTabs";
 
 export default function App() {
-
   return (
-    <SafeAreaView
-      style={{
-        backgroundColor: "#ff5722",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <AppLogoImage />
-      <WelcomeText />
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationContainer>
+        {/* <MainStackNavigator /> */}
+        <MyTabs />
+      </NavigationContainer>
     </SafeAreaView>
   );
 }
